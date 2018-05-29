@@ -32,31 +32,32 @@ void BallAnimation::wall_detect()
     {
         left_right=-(left_right);//invert values
         up_down=-(up_down);
-        just_switched = true;
+        //m_origin += QPoint(left_right,up_down);
+        //just_switched = true;
     }
 
     else if(m_origin.x() == 0+radius)//left side
     {
         left_right=1;
-        just_switched = true;
+        m_origin += QPoint(left_right,up_down+qrand() % 2);
     }
 
     else if(m_origin.x() == width()-radius)//right side
     {
         left_right=-1;
-        just_switched = true;
+        m_origin += QPoint(left_right,up_down+qrand() % 2 );
     }
 
     if(m_origin.y() == 0+radius)//top
     {
         up_down = 1;
-        just_switched = true;
+        m_origin += QPoint(left_right+qrand() % 2, up_down);
     }
 
     else if(m_origin.y() == height()-radius)//bottom
     {
         up_down = -1;
-        just_switched = true;
+        m_origin += QPoint(left_right+qrand() % 2 ,up_down);
     }
 
 }
