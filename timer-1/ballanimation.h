@@ -26,6 +26,7 @@ private:
     int e_width = 10;
     int e_height = 10;
     int radius = e_height / 2;
+    bool just_switched = false;
 };
 
 #endif // BALLANIMATION_H

@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_led_state[2] = 0;
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(readData()));
-    timer->start(50);
+    timer->start(20);
     banimate->move(QPoint(200,200));
     //setFixedSize(800,600);
 }
